@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+
+
+                <div class="container">
+                    <div class="col-sm-2">
+                        <h4 class="title" style="margin-top:10px;">Seleccione un filtro
+                        </h4>
+                    </div>
+
+
+
+                    <div class="col-sm-2 ">
+
+                        <div class="input-group dropdown">
+                            <select class="form-control" [(ngModel)]="selectedElement">
+     <option *ngFor="let type of types" [ngValue]="type.id"> {{type.Name}}</option>
+    </select></div>
+                        <div class="input-group-btn search-panel">
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                        <input type="hidden" value="all" id="search_param">
+                        <input type="text" class="form-control" id="info" (input)="input.value=$event.target.value.toUpperCase()" [(ngModel)]="_nombre" placeholder="Buscar..." required pattern="[0-9]+" #input>
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-danger"><span class="ti-search"></span></button>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="content">
+
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of tableData1.dataRows">
+                                    <td *ngFor="let cell of row">{{cell}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="sidebar-wrapper">
+    <div class="logo">
+        <a href="https://www.creative-tim.com" class="simple-text">
+            <div class="logo-img">
+                <img src="../../assets/img/perfil.png" style="margin-top:16px;" height="40px" width="80px" alt="">
+            </div>
+            <p class="arriba" style="font-size:20px;">Nombre de Usuario</p>
+        </a><br><br>
+    </div>
+    <ul class="nav">
+
+        <li class="divider" *ngIf="isNotMobileMenu()"></li>
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+            <a [routerLink]="[menuItem.path]">
+                <i class="{{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+
+        </li>
+        <div class="container" style="margin-left:10px; ">
+            <div class="dropdown" dropdown>
+                <i class="ti-panel"></i>
+                <li class="" dropdown-open>
+                    <p>Configuración</p>
+                </li>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a>
+                            <p>Lectura de checadores
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <p>Restricciones normativas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <p>Rango o perfiles de horarios</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <p>Dias inhábiles</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <p>Administración de usuarios</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ul>
+</div>

@@ -1,0 +1,7 @@
+ul li:hover {
+    background: white;
+}
+
+ul li ul li {
+    background: white;
+}
